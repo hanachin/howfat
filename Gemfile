@@ -40,10 +40,12 @@ group :development, :test do
   gem 'guard', github: 'guard'
   gem 'guard-rspec', require: false
   gem 'growl',       require: RUBY_PLATFORM.include?('darwin') && 'growl'
+
+  # make sure rails g generates rspec files
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
 end
