@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023133020) do
+ActiveRecord::Schema.define(version: 20131023153641) do
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131023133020) do
     t.string   "twitter_secret"
     t.string   "token"
     t.string   "secret"
+    t.string   "remember_token"
   end
 
 end
