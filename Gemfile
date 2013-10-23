@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'dotenv-rails'
 gem 'settingslogic'
 gem 'fitbit-omni-api'
 
