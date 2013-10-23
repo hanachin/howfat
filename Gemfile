@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'settingslogic'
 gem 'fitbit-omni-api'
 
 # Use ActiveModel has_secure_password
