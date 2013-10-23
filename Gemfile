@@ -36,6 +36,11 @@ gem 'dotenv-rails'
 gem 'settingslogic'
 gem 'fitbit-omni-api'
 
+group :development, :test do
+  gem 'guard-rspec', require: false
+  gem 'growl',       require: RUBY_PLATFORM.include?('darwin') && 'growl'
+end
+
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
