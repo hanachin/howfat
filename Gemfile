@@ -35,6 +35,7 @@ end
 gem 'dotenv-rails'
 gem 'settingslogic'
 gem 'fitbit-omni-api'
+gem 'omniauth-twitter'
 
 group :development, :test do
   gem 'guard', github: 'guard'
