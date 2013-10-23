@@ -37,6 +37,7 @@ gem 'settingslogic'
 gem 'fitbit-omni-api'
 
 group :development, :test do
+  gem 'guard', github: 'guard'
   gem 'guard-rspec', require: false
   gem 'growl',       require: RUBY_PLATFORM.include?('darwin') && 'growl'
 end
