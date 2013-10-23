@@ -1,1 +1,11 @@
-<%= link_to 'Fitbitでサインアップ', '/auth/fitbit' %>
+<% if current_user && current_user.token %>
+  こんにちは<%= current_user.name %>さん
+<% else %>
+  <%= link_to 'Fitbitでサインアップ', '/auth/fitbit' %>
+<% end %>
+
+<% if current_user && !current_user.twitter_token.blank? %>
+  Twitterに連携してますね! 成功です!
+<% else %>
+  <%= link_to 'Twitterでもサインアップしましょ', '/auth/twitter' %>
+<% end %>

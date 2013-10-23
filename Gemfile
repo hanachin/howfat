@@ -35,15 +35,19 @@ end
 gem 'dotenv-rails'
 gem 'settingslogic'
 gem 'fitbit-omni-api'
+gem 'omniauth-twitter'
+gem 'twitter', '~>5.0.0.rc'
 
 group :development, :test do
   gem 'guard', github: 'guard'
   gem 'guard-rspec', require: false
   gem 'growl',       require: RUBY_PLATFORM.include?('darwin') && 'growl'
+
+  # make sure rails g generates rspec files
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
 end
