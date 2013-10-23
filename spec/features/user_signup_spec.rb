@@ -4,18 +4,20 @@ feature 'ユーザーとして、サインアップし、体重晒しサービ�
   let(:nickname) { 'hanachin' }
 
   shared_context 'Fitbitの認証に成功する', fitbit: true do
-    OmniAuth.config.mock_auth[:fitbit] = OmniAuth::AuthHash.new({
-      provider: 'fitbit',
-      uid:      '123545',
-      info: {
-        nickname: nickname
-      }
-    })
+    before do
+      OmniAuth.config.mock_auth[:fitbit] = OmniAuth::AuthHash.new({
+        provider: 'fitbit',
+        uid:      '123545',
+        info: { nickname: nickname }
+      })
+    end
   end
 
-  scenario 'トップページを訪れ、Fitbitで認証し、サインアップする', fitbit: true do
-    visit root_path
-    click_on 'Fitbitでサインアップ'
-    expect(page).to have_text nickname
+  context 'はじめてのサインアップ', fitbit: true do
+    scenario 'トップページを訪れ、Fitbitで認証し、サインアップする' do
+      visit root_path
+      click_on 'Fitbitでサインアップ'
+      expect(page).to have_text nickname
+    end
   end
 end
